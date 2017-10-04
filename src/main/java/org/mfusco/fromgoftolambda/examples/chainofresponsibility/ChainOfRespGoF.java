@@ -78,7 +78,8 @@ public class ChainOfRespGoF {
         presentationParser.setNextParser( audioParser );
         audioParser.setNextParser( videoParser );
 
-        File file = new File( File.Type.AUDIO, "Dream Theater  - The Astonishing" );
+        File file = new File( File.Type.AUDIO,
+                "Dream Theater  - The Astonishing" );
 
         System.out.println( textParser.parse( file ) );
     }

@@ -19,10 +19,14 @@ public class DecoratorLambda {
                 .andThen( Taxes::healthInsurance )
                 .applyAsDouble( 80000.00 );
 
-        calculateSalary( 80000.00, new DefaultSalaryCalculator(), Taxes::generalTax, Taxes::regionalTax, Taxes::healthInsurance );
+        calculateSalary( 80000.00,
+                new DefaultSalaryCalculator(),
+                Taxes::generalTax, Taxes::regionalTax, Taxes::healthInsurance );
     }
 
     public static double calculateSalary(double annualGross, DoubleUnaryOperator... taxes) {
-        return Stream.of(taxes).reduce( DoubleUnaryOperator.identity(), DoubleUnaryOperator::andThen ).applyAsDouble( annualGross );
+        return Stream.of(taxes)
+                .reduce( DoubleUnaryOperator.identity(), DoubleUnaryOperator::andThen )
+                .applyAsDouble( annualGross );
     }
 }

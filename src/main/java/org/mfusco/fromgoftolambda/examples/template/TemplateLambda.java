@@ -13,7 +13,7 @@ public class TemplateLambda {
     }
 
     public static void main( String[] args ) {
-        withResource( resource -> resource.useResource() );
-        withResource( resource -> resource.employResource() );
+        withResource(Resource::useResource);
+        withResource(Resource::employResource);
     }
 }

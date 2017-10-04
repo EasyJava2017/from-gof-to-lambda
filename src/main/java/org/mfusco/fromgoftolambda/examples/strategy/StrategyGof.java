@@ -61,7 +61,18 @@ public class StrategyGof {
     }
 
     public static void main( String[] args ) {
+        System.out.println("ErrorTextFormatter:");
         TextEditor textEditor = new TextEditor( new ErrorTextFormatter() );
+        textEditor.publishText( "ERROR - something bad happened" );
+        textEditor.publishText( "DEBUG - I'm here" );
+
+        System.out.println("\nShortTextFormatter:");
+        textEditor = new TextEditor( new ShortTextFormatter() );
+        textEditor.publishText( "ERROR - something bad happened" );
+        textEditor.publishText( "DEBUG - I'm here" );
+
+        System.out.println("\nPlainTextFormatter:");
+        textEditor = new TextEditor( new PlainTextFormatter() );
         textEditor.publishText( "ERROR - something bad happened" );
         textEditor.publishText( "DEBUG - I'm here" );
     }

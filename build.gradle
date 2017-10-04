@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'org.mfusco'
+version = '1.0-SNAPSHOT'
+
+description = """
+Mario Fusco, "From GoF to Lambda"
+https://github.com/mariofusco/from-gof-to-lambda
+Video: https://www.youtube.com/watch?v=lZG74WbnhoE
+"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+     jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}
