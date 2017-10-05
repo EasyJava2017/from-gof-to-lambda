@@ -4,6 +4,7 @@ import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 
 public class StrategyLambda {
+    public static final UnaryOperator<String> UPPER = String::toUpperCase;
 
     public static void publishText(String text,
                                    Predicate<String> filter,
